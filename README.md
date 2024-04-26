@@ -38,25 +38,6 @@ we will have to create a **Google Service Account**.
 * Click on `Download all Horizon Europe projects`
 * Unzip the file in the current working director
 
-## Configuring the environment
-
-Use virtualenv to configure the working environment:
-
-```shell
-]$ virtualenv -p /usr/bin/python3.10 venv
-created virtual environment CPython3.10.12.final.0-64 in 1748ms
-[..]
-
-]$ source venv/bin/activate
-```
-
-Install the library `gspread` with pip3:
-
-```shell
-]$ pip3 install gspread
-[..]
-```
-
 ## Install the credentials of the Google Service Account
 
 Install the JSON file downloaded when you created a Google Service Account and rename it as `service_account.json`
