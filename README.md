@@ -33,8 +33,9 @@ we will have to create a **Google Service Account**.
 
 ## Download all Horizon Europe projects
 
-* From the [CORDIS portal](https://cordis.europa.eu/projects)
+* Visit che [CORDIS portal](https://cordis.europa.eu/projects)
 * Click on `Download all Horizon Europe projects`
+* Get the link of the Download URL clicking on `Access`
 * Unzip the file `cordis-HORIZONprojects-json.zip` in the current working director
 
 ## Install the credentials of the Google Service Account
