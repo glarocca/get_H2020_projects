@@ -117,6 +117,20 @@ Verbose Level = DEBUG
 [INFO] Updated the project [POLIIICE] at the row: 7
 [INFO] Updated the project [XR5.0] at the row: 8
 [..]
+[INFO] Existing projects statistics updated in the Google worksheet!
+[INFO] Adding the [CREDIT Vibes] H2020 project at row: 238
+[INFO] Adding the [PQ-REACT] H2020 project at row: 239
+[INFO] Adding the [iBEMS-SeLiBat] H2020 project at row: 240
+[INFO] Adding the [finapp cosmic ray neutron sensing] H2020 project at row: 241
+[INFO] Adding the [EINSTEIN] H2020 project at row: 242
+[INFO] Adding the [SUPREME] H2020 project at row: 243
+[INFO] Adding the [CONNECT] H2020 project at row: 244
+[INFO] Adding the [ANIMATE] H2020 project at row: 245
+[INFO] Adding the [CODE] H2020 project at row: 246
+[INFO] Adding the [QOMUNE] H2020 project at row: 247
+[INFO] Adding the [HAVEN] H2020 project at row: 248
+[INFO] Adding the [AURORA] H2020 project at row: 249
+[INFO] Adding the [CLEVER] H2020 project at row: 250
 ```
 
 The statistics are updated in the Google worksheet [CORDIS H2020 project](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit) (in the `Cloud projects` tab)
