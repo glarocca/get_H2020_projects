@@ -87,7 +87,7 @@ Edit the `openrc.sh`, configure the `scope=cloud` and the specify the `ACCOUNTIN
 ```bash
 export CORDIS_FILENAME="json/project.json"
 
-# Possible keyword = 'cloud', 'Artificial Intelligence', 'Edge computing'
+# Possible keywords = 'cloud', 'Artificial Intelligence', 'Edge computing', 'IoT'
 export KEYWORD="cloud"
 
 export SERVICE_ACCOUNT_PATH=${PWD}"/.config/"
