@@ -32,6 +32,12 @@ we will have to create a **Google Service Account**.
 * Install gspread API: `sudo pip3 install gspread`
 * Install venv: `sudo apt install -y python3-venv`
 
+## Download all Horizon Europe projects
+
+* From the [CORDIS portal](https://cordis.europa.eu/projects)
+* Click on `Download all Horizon Europe projects`
+* Unzip the file in the current working director
+
 ## Configuring the environment
 
 Use virtualenv to configure the working environment:
