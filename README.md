@@ -1,6 +1,19 @@
 # get_H2020_projects
 This repository contains python client to extract statistics about the list of running H2020 projects from the CORDIS portal.
 
+## Pre-requisites
+
+* `Python 3.10.12+` installed on your local computer
+* Install pip3: `apt-get install -y python3-pip`
+* Install gspread API: `sudo pip3 install gspread`
+
+## Download all Horizon Europe projects
+
+* Visit che [CORDIS portal](https://cordis.europa.eu/projects)
+* Click on `Download all Horizon Europe projects`
+* Get the link of the Download URL clicking on `Access`
+* Unzip the file `cordis-HORIZONprojects-json.zip` in the current working director
+  
 ## Creating a Google Service Account
 
 In order to read from and write data to Google Sheets in Python,
@@ -23,20 +36,7 @@ we will have to create a **Google Service Account**.
 * Once the Service Account has been created, click on **Keys** and click on "Add new Keys" and select JSON
 * The credentials will be created and downloaded as a JSON file
 * Copy the JSON file to your code directory and rename it to `credentials.json`
-* Ask the [Owner](mailto:giuseppe.larocca@egi.eu) to grant **Edit** rights to the **Service Account** in the [Google Spread-sheet](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit)
-
-## Pre-requisites
-
-* `Python 3.10.12+` installed on your local computer
-* Install pip3: `apt-get install -y python3-pip`
-* Install gspread API: `sudo pip3 install gspread`
-
-## Download all Horizon Europe projects
-
-* Visit che [CORDIS portal](https://cordis.europa.eu/projects)
-* Click on `Download all Horizon Europe projects`
-* Get the link of the Download URL clicking on `Access`
-* Unzip the file `cordis-HORIZONprojects-json.zip` in the current working director
+* Ask the [Owner](mailto:giuseppe.larocca@egi.eu) to grant **Edit** rights to the **Google Service Account** in the [Google Spread-sheet](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit)
 
 ## Install the credentials of the Google Service Account
 
