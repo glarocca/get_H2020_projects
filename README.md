@@ -23,7 +23,7 @@ we will have to create a **Google Service Account**.
 * Once the Service Account has been created, click on **Keys** and click on "Add new Keys" and select JSON
 * The credentials will be created and downloaded as a JSON file
 * Copy the JSON file to your code directory and rename it to `credentials.json`
-* Grant **Edit** rights to the **Service Account** in the Google Spread-sheet
+* Grant **Edit** rights to the **Service Account** in the [Google Spread-sheet](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit)
 
 ## Pre-requisites
 
