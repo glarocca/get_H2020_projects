@@ -30,7 +30,6 @@ we will have to create a **Google Service Account**.
 * `Python 3.10.12+` installed on your local computer
 * Install pip3: `apt-get install -y python3-pip`
 * Install gspread API: `sudo pip3 install gspread`
-* Install venv: `sudo apt install -y python3-venv`
 
 ## Download all Horizon Europe projects
 
