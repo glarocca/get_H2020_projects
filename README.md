@@ -63,7 +63,7 @@ Install the JSON file downloaded when you created a Google Service Account and r
 
 This python client generates statistics about the list of running EC-funded projects registered in the [CORDIS Portal](https://cordis.europa.eu/)
 
-Edit the `openrc.sh`, configure the `scope=cloud` and the specify the `ACCOUNTING_METRIC` to be calculated
+Edit the `openrc.sh`, and configure the `keyword=cloud` to be used for the investigation.
 
 ```bash
 export CORDIS_FILENAME="json/project.json"
@@ -116,6 +116,7 @@ Verbose Level = DEBUG
 [INFO] Updated the project [ORBIT-D] at the row: 6
 [INFO] Updated the project [POLIIICE] at the row: 7
 [INFO] Updated the project [XR5.0] at the row: 8
+[..]
 ```
 
 The statistics are updated in the Google worksheet [CORDIS H2020 project](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit) in the `Cloud projects` tab
