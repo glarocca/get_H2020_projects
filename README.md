@@ -44,6 +44,89 @@ Install the library `gspread` with pip3:
 [..]
 ```
 
+## Install the credentials of the Google Service Account
+
+Install the JSON file downloaded when you created a Google Service Account and rename it as `service_account.json`
+
+```bash
+]$ mkdir $PWD/.config
+]$ cat .config/service_account.json
+{
+  "type": "service_account",
+  "project_id": "striped-rhino-395008",
+  "private_key_id": "<ADD_PRIVATE_KEY_ID> HERE",
+  "private_key": "<ADD PRIVATE_KEY> HERE",
+  "client_email": "python-google-sheet-service-ac@striped-rhino-395008.iam.gserviceaccount.com",
+  "client_id": "<ADD CLIENT_ID> HERE",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/python-google-sheet-service-ac%40striped-rhino-395008.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
+```
+## Generate statistics from the CORDIS portal
+
+This python client generates statistics about the list of running EC-funded projects registered in the [CORDIS Portal](https://cordis.europa.eu/)
+
+Edit the `openrc.sh`, configure the `scope=cloud` and the specify the `ACCOUNTING_METRIC` to be calculated
+
+```bash
+export CORDIS_FILENAME="json/project.json"
+
+# Possible keyword = 'cloud', 'Artificial Intelligence', 'Edge computing'
+export KEYWORD="cloud"
+
+export SERVICE_ACCOUNT_PATH=${PWD}"/.config/"
+export SERVICE_ACCOUNT_FILE=${SERVICE_ACCOUNT_PATH}"service_account.json"
+export GOOGLE_SHEET_NAME="CORDIS H2020 projects"
+export GOOGLE_CLOUD_WORKSHEET="Cloud projects"
+export GOOGLE_AI_WORKSHEET="AI projects"
+export GOOGLE_EDGE_WORKSHEET="Edge projects"
+export GOOGLE_IoT_WORKSHEET="IoT projects"
+
+# LOG=INFO, no verbose logging is 'OFF'
+# LOG=DEBUG, verbose logging is 'ON'
+#export LOG="INFO"
+export LOG="DEBUG"
+```
+
+Source the environment settings and run the client
+
+```bash
+]$ clear && source openrc.sh && python3 get_H2020_projects.py
+
+Verbose Level = DEBUG
+
+[DEBUG]  Variables settings
+{
+    "CORDIS_FILENAME": "json/project.json",
+    "KEYWORD": "cloud",
+    "SERVICE_ACCOUNT_PATH": "/home/larocca/modules/APIs/CORDIS/.config/",
+    "SERVICE_ACCOUNT_FILE": "/home/larocca/modules/APIs/CORDIS/.config/service_account.json",
+    "GOOGLE_SHEET_NAME": "CORDIS H2020 projects",
+    "GOOGLE_CLOUD_WORKSHEET": "Cloud projects",
+    "GOOGLE_AI_WORKSHEET": "AI projects",
+    "GOOGLE_EDGE_WORKSHEET": "Edge projects",
+    "GOOGLE_IoT_WORKSHEET": "IoT projects",
+    "LOG": "DEBUG"
+}
+
+[DEBUG]  Parsing H2020 projects from the CORDIS portal in progress
+	 This operation may take few minutes to complete. Please wait!
+
+[INFO] Updated the project [AC3] at the row: 2
+[INFO] Updated the project [RISER] at the row: 3
+[INFO] Updated the project [DETERMINISTIC6G] at the row: 4
+[INFO] Updated the project [6G-XR] at the row: 5
+[INFO] Updated the project [ORBIT-D] at the row: 6
+[INFO] Updated the project [POLIIICE] at the row: 7
+[INFO] Updated the project [XR5.0] at the row: 8
+```
+
+The VO statistics are updated in the Google worksheet [CORDIS H2020 project](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit) in the `Cloud projects` tab
+
+
 ## References
 * [gspread APIs documentation](https://docs.gspread.org/en/v5.10.0/)
 * [How to connect Python to GoogleSheets](https://blog.coupler.io/python-to-google-sheets/)
