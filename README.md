@@ -25,6 +25,13 @@ we will have to create a **Google Service Account**.
 * Copy the JSON file to your code directory and rename it to `credentials.json`
 * Grant **Edit** rights to the **Service Account** in the Google Spread-sheet
 
+## Pre-requisites
+
+* `Python 3.10.12+` installed on your local computer
+* Install pip3: `apt-get install -y python3-pip`
+* Install gspread API: `sudo pip3 install gspread`
+* Install venv: `sudo apt install -y python3-venv`
+
 ## Configuring the environment
 
 Use virtualenv to configure the working environment:
