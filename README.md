@@ -63,7 +63,7 @@ Install the JSON file downloaded when you created a Google Service Account and r
 
 This python client generates statistics about the list of running EC-funded projects registered in the [CORDIS Portal](https://cordis.europa.eu/)
 
-Edit the `openrc.sh`, and configure the `keyword=cloud` to be used for the investigation.
+Edit the `openrc.sh`, and configure the `KEYWORD` to be used for the investigation.
 
 ```bash
 export CORDIS_FILENAME="json/project.json"
