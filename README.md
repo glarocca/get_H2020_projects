@@ -124,7 +124,7 @@ Verbose Level = DEBUG
 [INFO] Updated the project [XR5.0] at the row: 8
 ```
 
-The VO statistics are updated in the Google worksheet [CORDIS H2020 project](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit) in the `Cloud projects` tab
+The statistics are updated in the Google worksheet [CORDIS H2020 project](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit) in the `Cloud projects` tab
 
 
 ## References
