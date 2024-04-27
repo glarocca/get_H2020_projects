@@ -13,7 +13,7 @@ This repository contains python client to extract statistics about the list of r
 * Visit che [CORDIS portal](https://cordis.europa.eu/projects)
 * Click on `Download all Horizon Europe projects`
   
-  ![CORDIS](./imgs/img01.png | width=100)
+  ![CORDIS](./imgs/img01.png)
   
 * Get the link of the Download URL clicking on `Access`
   
