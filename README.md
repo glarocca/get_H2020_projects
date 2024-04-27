@@ -11,11 +11,11 @@ This repository contains python client to extract statistics about the list of r
 ## Download all Horizon Europe projects
 
 * Visit che [CORDIS portal](https://cordis.europa.eu/projects)
-* Click on `Download all Horizon Europe projects`
+* Click on `Download all Horizon Europe projects` button below
   
   ![CORDIS](./imgs/img01.png)
   
-* Get the link of the Download URL clicking on `Access`
+* Download the list of projects in JSON format. To get the link of the Download URL, click on the `Access` drop-down list
   
   ![CORDIS](./imgs/img02.png)
   
