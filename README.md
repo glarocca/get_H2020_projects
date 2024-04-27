@@ -66,6 +66,7 @@ This python client generates statistics about the list of running EC-funded proj
 Edit the `openrc.sh`, and configure the `KEYWORD` to be used for the investigation.
 
 ```bash
+export CORDIS_PORTAL="https://cordis.europa.eu"
 export CORDIS_FILENAME="json/project.json"
 
 # Possible keywords = 'cloud', 'Artificial Intelligence', 'Edge computing', 'IoT'
@@ -95,7 +96,8 @@ Verbose Level = DEBUG
 [DEBUG]  Variables settings
 {
     "CORDIS_FILENAME": "json/project.json",
-    "KEYWORD": "cloud",
+    "CORDIS_PORTAL": "https://cordis.europa.eu",
+    "KEYWORD": "IoT",
     "SERVICE_ACCOUNT_PATH": "/home/larocca/modules/APIs/CORDIS/.config/",
     "SERVICE_ACCOUNT_FILE": "/home/larocca/modules/APIs/CORDIS/.config/service_account.json",
     "GOOGLE_SHEET_NAME": "CORDIS H2020 projects",
@@ -109,28 +111,30 @@ Verbose Level = DEBUG
 [DEBUG]  Parsing H2020 projects from the CORDIS portal in progress
 	 This operation may take few minutes to complete. Please wait!
 
-[INFO] Updated the project [AC3] at the row: 2
-[INFO] Updated the project [RISER] at the row: 3
-[INFO] Updated the project [DETERMINISTIC6G] at the row: 4
-[INFO] Updated the project [6G-XR] at the row: 5
-[INFO] Updated the project [ORBIT-D] at the row: 6
-[INFO] Updated the project [POLIIICE] at the row: 7
-[INFO] Updated the project [XR5.0] at the row: 8
+[INFO] Updated the project [PrivatePersonalData] at the row: 2
+[INFO] Updated the project [INCODE] at the row: 3
+[INFO] Updated the project [6G-SHINE] at the row: 4
+[INFO] Updated the project [INSTAR] at the row: 5
+[INFO] Updated the project [CMXsafe] at the row: 6
+[INFO] Updated the project [DOSS] at the row: 7
+[INFO] Updated the project [SEA2Learn] at the row: 8
+[INFO] Updated the project [CERTIFY] at the row: 9
+[INFO] Updated the project [ICOS] at the row: 10
+[INFO] Existing projects statistics *UPDATED* in the Google worksheet!
+
+[INFO] Adding the [SecOPERA] H2020 project at row: 10
+[INFO] Adding the [SUPERIOT] H2020 project at row: 11
+[INFO] Adding the [CORTEX2] H2020 project at row: 12
+[INFO] Adding the [YAHYA-6G] H2020 project at row: 13
+[INFO] Adding the [AMBIANCE] H2020 project at row: 14
+[INFO] Adding the [IMPAC3T-IP] H2020 project at row: 15
+[INFO] Adding the [DISCOVER-US] H2020 project at row: 16
+[INFO] Adding the [HiPEAC] H2020 project at row: 17
+[INFO] Adding the [MultiLab] H2020 project at row: 18
+[INFO] Adding the [ECOdig] H2020 project at row: 19
+[INFO] Adding the [NGMA-RIS] H2020 project at row: 20
 [..]
-[INFO] Existing projects statistics updated in the Google worksheet!
-[INFO] Adding the [CREDIT Vibes] H2020 project at row: 238
-[INFO] Adding the [PQ-REACT] H2020 project at row: 239
-[INFO] Adding the [iBEMS-SeLiBat] H2020 project at row: 240
-[INFO] Adding the [finapp cosmic ray neutron sensing] H2020 project at row: 241
-[INFO] Adding the [EINSTEIN] H2020 project at row: 242
-[INFO] Adding the [SUPREME] H2020 project at row: 243
-[INFO] Adding the [CONNECT] H2020 project at row: 244
-[INFO] Adding the [ANIMATE] H2020 project at row: 245
-[INFO] Adding the [CODE] H2020 project at row: 246
-[INFO] Adding the [QOMUNE] H2020 project at row: 247
-[INFO] Adding the [HAVEN] H2020 project at row: 248
-[INFO] Adding the [AURORA] H2020 project at row: 249
-[INFO] Adding the [CLEVER] H2020 project at row: 250
+[INFO] *NEW** projects statistics *ADDED* in the Google worksheet!
 ```
 
 The statistics are updated in the Google worksheet [CORDIS H2020 project](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit) (in the `Cloud projects` tab)
