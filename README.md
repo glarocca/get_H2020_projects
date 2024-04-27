@@ -5,8 +5,8 @@ This repository contains python client to extract statistics about the list of r
 
 * `Python 3.10.12+` installed on your local computer
 * Install pip3: `apt-get install -y python3-pip`
-* Install gspread API: `sudo pip3 install gspread`
-* Install beautifulsoup4: `pip3 install beautifulsoup4`
+* Install [gspread API](https://docs.gspread.org/en/v5.10.0/): `sudo pip3 install gspread`
+* Install [beautifulsoup4](https://pypi.org/project/beautifulsoup4/): `pip3 install beautifulsoup4`
 
 ## Download all Horizon Europe projects
 
