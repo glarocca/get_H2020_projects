@@ -138,7 +138,7 @@ Verbose Level = DEBUG
 [INFO] *NEW** projects statistics *ADDED* in the Google worksheet!
 ```
 
-The statistics are updated in the Google worksheet [CORDIS H2020 project](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit) (in the `Cloud projects` tab)
+Projects' statistics are recorded in the Google worksheet [CORDIS H2020 project](https://docs.google.com/spreadsheets/d/18jLSH_IYCmrDOPyaEZqXz1DUfDLLU0v7COS7p6-jv_Y/edit) 
 
 
 ## References
