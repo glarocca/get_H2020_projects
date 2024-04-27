@@ -13,7 +13,7 @@ This repository contains python client to extract statistics about the list of r
 * Visit che [CORDIS portal](https://cordis.europa.eu/projects)
 * Click on `Download all Horizon Europe projects`
 * Get the link of the Download URL clicking on `Access`
-* Unzip the file `cordis-HORIZONprojects-json.zip` in the current working director
+* Unzip the file `cordis-HORIZONprojects-json.zip` in the current working director and configure the `CORDIS_FILENAME` env. variable
   
 ## Creating a Google Service Account
 
