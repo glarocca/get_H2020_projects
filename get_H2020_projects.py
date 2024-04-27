@@ -24,6 +24,7 @@ import time
 
 from utils import colourise, get_env_settings
 from gspreadutils import init_GWorkSheet
+from cordisutils import get_project_URL, get_project_details
 
 __author__    = "Giuseppe LA ROCCA"
 __email__     = "giuseppe.larocca@egi.eu"
@@ -47,7 +48,7 @@ def get_GWorkSheet_position(env, worksheet, project_acronym):
     return(row)
 
 
-def update_GWorkSheet(env, worksheet, index, project):
+def update_GWorkSheet(env, worksheet, index, project, project_coordinator):
     ''' Update the accounting records in the Google Worksheet '''
 
     # Formatting the header of the worksheet
@@ -74,14 +75,15 @@ def update_GWorkSheet(env, worksheet, index, project):
         project['fundingScheme'],
         project['topics'],
         str(project['grantDoi']),
+        project_coordinator,
         project['totalCost']
     ]
 
-    worksheet.insert_row(body, index=index, inherit_from_before=True)
+    worksheet.insert_row(body, index=index, inherit_from_before=False)
 
 
 def get_projectId(projects, acronym):
-    ''' Retrieve the position of the projectId in the original list '''
+    ''' Retrieve the position of the projectId in the python list() '''
    
     index = 0    
     for project in projects:
@@ -130,10 +132,16 @@ def main():
                 # 1.) Updated existing projects in the worksheet
                 if (worksheet_dict['Project Acronym'] == project['acronym']) and \
                    (worksheet_dict['DOIs']  == project['grantDoi']):
-                       # Find the proper cell where update the VO metadata
+    
+                       # Find the proper cell where update the project metadata
                        project_cell = worksheet.find(worksheet_dict['Project Acronym'])
 
-                       # Update the Google Worksheet cell
+                       if project['grantDoi']:
+                          # Get the project's coordinator from the CORDIS portal
+                          project_url = get_project_URL(env['CORDIS_PORTAL'], project['grantDoi'])
+                          project_coordinator = get_project_details(project_url)
+
+                       # Update cells of the Google Worksheet
                        worksheet.update_cell(project_cell.row, 1, project['acronym'])
                        worksheet.update_cell(project_cell.row, 2, project['title'])
                        worksheet.update_cell(project_cell.row, 3, project['objective'])
@@ -142,7 +150,8 @@ def main():
                        worksheet.update_cell(project_cell.row, 6, project['fundingScheme'])
                        worksheet.update_cell(project_cell.row, 7, project['topics'])
                        worksheet.update_cell(project_cell.row, 8, str(project['grantDoi']))
-                       worksheet.update_cell(project_cell.row, 9, str(project['totalCost']))
+                       worksheet.update_cell(project_cell.row, 9, project_coordinator)
+                       worksheet.update_cell(project_cell.row, 10, str(project['totalCost']))
                        
                        if env['LOG'] == "DEBUG":
                           print(colourise("green", "[INFO]"), \
@@ -160,29 +169,55 @@ def main():
               "Quota exceeded for metric 'Write requests' and 'Write requests per minute per user'")
               time.sleep (60)   
 
-    print(colourise("cyan", "[INFO]"), "Existing projects statistics updated in the Google worksheet!")
+    print(colourise("cyan", "[INFO]"), "Existing projects statistics *UPDATED* in the Google worksheet!")
 
-    for project in projects:
-        if env['KEYWORD'] == "cloud":
-            if re.search(r'\bcloud\b', project['objective']) and (project['endDate'] > _now):
-               update_GWorkSheet(env, worksheet, index, project)
-               index = index + 1
+    try:
+       for project in projects:
+            if env['KEYWORD'] == "cloud":
+               if re.search(r'\bcloud\b', project['objective']) and (project['endDate'] > _now):
+
+                  if project['grantDoi']:
+                     # Get the project's coordinator from the CORDIS portal
+                     project_url = get_project_URL(env['CORDIS_PORTAL'], project['grantDoi'])
+                     project_coordinator = get_project_details(project_url)
+
+                  update_GWorkSheet(env, worksheet, index, project, project_coordinator)
+                  index = index + 1
         
-        if env['KEYWORD'] == "IoT":
-            if re.search(r'\bIoT\b', project['objective']) and (project['endDate'] > _now):
-               update_GWorkSheet(env, worksheet, index, project)
-               index = index + 1
+            if env['KEYWORD'] == "IoT":
+               if re.search(r'\bIoT\b', project['objective']) and (project['endDate'] > _now):
 
-        if env['KEYWORD'] == "Artificial Intelligence":
-            if re.search(r'\bArtificial Intelligence\b', project['objective']) and (project['endDate'] > _now):
-               update_GWorkSheet(env, worksheet, index, project)
-               index = index + 1
+                  if project['grantDoi']:
+                     # Get the project's coordinator from the CORDIS portal
+                     project_url = get_project_URL(env['CORDIS_PORTAL'], project['grantDoi'])
+                     project_coordinator = get_project_details(project_url)
+ 
+                  update_GWorkSheet(env, worksheet, index, project, project_coordinator)
+                  index = index + 1
+
+            if env['KEYWORD'] == "Artificial Intelligence":
+               if re.search(r'\bArtificial Intelligence\b', project['objective']) and (project['endDate'] > _now):
+                  
+                  if project['grantDoi']:
+                     # Get the project's coordinator from the CORDIS portal
+                     project_url = get_project_URL(env['CORDIS_PORTAL'], project['grantDoi'])
+                     project_coordinator = get_project_details(project_url)
+
+                  update_GWorkSheet(env, worksheet, index, project, project_coordinator)
+                  index = index + 1
         
-        if env['KEYWORD'] == "Edge computing":
-            if re.search(r'\bEdge computing\b', project['objective']) and (project['endDate'] > _now):
-               update_GWorkSheet(env, worksheet, index, project)
-               index = index + 1
+            if env['KEYWORD'] == "Edge computing":
+               if re.search(r'\bEdge computing\b', project['objective']) and (project['endDate'] > _now):
+                  update_GWorkSheet(env, worksheet, index, project)
+                  index = index + 1
 
+    except:
+           print(colourise("red", "[WARNING]"), \
+           "Quota exceeded for metric 'Write requests' and 'Write requests per minute per user'")
+           time.sleep (60)
+
+    print(colourise("cyan", "[INFO]"), "*NEW* projects statistics *ADDED* in the Google worksheet!")
+    
     # Update the timestamp of the last update
     worksheet.insert_note("A1","Last update on: " + timestamp)
     
