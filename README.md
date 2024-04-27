@@ -6,6 +6,7 @@ This repository contains python client to extract statistics about the list of r
 * `Python 3.10.12+` installed on your local computer
 * Install pip3: `apt-get install -y python3-pip`
 * Install gspread API: `sudo pip3 install gspread`
+* Install beautifulsoup4: `pip3 install beautifulsoup4`
 
 ## Download all Horizon Europe projects
 
@@ -142,5 +143,6 @@ The statistics are updated in the Google worksheet [CORDIS H2020 project](https:
 
 ## References
 * [gspread APIs documentation](https://docs.gspread.org/en/v5.10.0/)
+* [beautifulsoup4 4.12.3](https://pypi.org/project/beautifulsoup4/)
 * [How to connect Python to GoogleSheets](https://blog.coupler.io/python-to-google-sheets/)
 * [Google Developer Console](https://console.cloud.google.com/apis/dashboard)
